@@ -1,6 +1,6 @@
 <?php
 
-require_once('./transfere.php');
+require_once('./transfert.php');
 
 /**
  *   Régle métier : Transférer de l’argent entre 2 comptes :
@@ -15,8 +15,8 @@ require_once('./transfere.php');
 function test_transfert_amont(): bool
 {
     $feed = 250;
-    $debitAccount = transfertAmont([1000], $feed);
     $feedAccount = [];
+    $debitAccount = transfertAmont([1000], $feedAccount);
 
     if (array_sum($debitAccount) - $feed) {
         return array_push($feedAccount, $feed);
